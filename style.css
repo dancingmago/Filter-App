@@ -1,0 +1,25 @@
+.btn{
+    background-color: rgb(0, 255, 255);
+}
+.color{
+    background-color: violet;
+}
+h3{
+    font-size: 75px;
+    width: 100%;
+    top: 0;
+    line-height: 4;
+}
+canvas{
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes example{
+    from{
+        box-shadow: 1px 1px 30px rgb(199, 34, 240)
+    }
+    to{
+        box-shadow: 1px 1px 30px rgb(70, 57, 255);
+    }
+}
