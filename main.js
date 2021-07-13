@@ -1,5 +1,8 @@
-function preload(){
+nosex = 0;
+nosey = 0;
 
+function preload(){
+    moustache = loadImage("https://i.postimg.cc/kggD1TwR/Moustache-removebg-preview.png");
 }
 function setup(){
     canvas = createCanvas(300, 300);
@@ -14,9 +17,11 @@ function setup(){
 }
 function draw(){
     image(video, 0, 0, 300, 300);
+    image(moustache, nosex - 40, nosey, 70, 30);
+
 }
 function take_snapshot(){
-    save("Sunglasses.png");
+    save("Moustache.png");
 }
 function modelLoaded(){
     console.log("PoseNet is initialized");
@@ -24,7 +29,9 @@ function modelLoaded(){
 function gotPoses(results){
     if(results.length > 0){
         console.log(results);
-        console.log("nose x = " + results[0].pose.nose.x);
-        console.log("nose y = " + results[0].pose.nose.y);
+        nosex = results[0].pose.nose.x;
+        nosey = results[0].pose.nose.y;
+        console.log("nose x = " + nosex);
+        console.log("nose y = " + nosey);
     }
 }
